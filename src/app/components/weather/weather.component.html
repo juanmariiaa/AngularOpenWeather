@@ -8,16 +8,6 @@
   <!-- Search Section - Kept identical to Forecast -->
   <mat-card class="search-card">
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
-      <mat-chip-grid #chipGrid>
-        <mat-chip-row *ngFor="let cityId of cityIdArray" 
-                     (removed)="removeCity(cityId)">
-          {{cityId}}
-          <button matChipRemove>
-            <mat-icon>cancel</mat-icon>
-          </button>
-        </mat-chip-row>
-      </mat-chip-grid>
-
       <mat-form-field class="city-input" appearance="outline">
         <mat-label>Add City ID</mat-label>
         <input matInput
@@ -43,7 +33,6 @@
     </form>
   </mat-card>
 
-  <!-- Loading Spinner - Kept identical to Forecast -->
   <div class="spinner-container" *ngIf="loading">
     <mat-spinner diameter="50" class="custom-spinner"></mat-spinner>
   </div>
@@ -52,7 +41,6 @@
     <div class="weather-grid">
       <mat-card class="weather-card" *ngFor="let weather of weatherResults">
         <div class="weather-content">
-          <!-- Main Weather Info -->
           <div class="weather-main">
             <mat-icon class="weather-icon" [class.animated]="true">
               {{ getWeatherIcon(weather.description) }}
@@ -60,7 +48,6 @@
             <div class="temperature">{{ weather.temperature }}°C</div>
           </div>
   
-          <!-- City Information -->
           <div class="city-details">
             <h2>{{ weather.city_name }}</h2>
             <div class="description">{{ weather.description }}</div>
@@ -79,4 +66,5 @@
         </div>
       </mat-card>
     </div>
-  </div></div>
+  </div>
+</div>

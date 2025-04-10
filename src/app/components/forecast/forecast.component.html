@@ -7,16 +7,6 @@
   <!-- Search Section -->
   <mat-card class="search-card">
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
-      <mat-chip-grid #chipGrid>
-        <mat-chip-row *ngFor="let cityId of cityIdArray" 
-                     (removed)="removeCity(cityId)">
-          {{cityId}}
-          <button matChipRemove>
-            <mat-icon>cancel</mat-icon>
-          </button>
-        </mat-chip-row>
-      </mat-chip-grid>
-
       <mat-form-field class="city-input" appearance="outline">
         <mat-label>Add City ID</mat-label>
         <input matInput
@@ -49,8 +39,6 @@
 
   <!-- Results Section -->
   <div class="weather-container">
-    <!-- Header and Search sections remain the same -->
-
     <!-- Results Section -->
     <div class="forecast-results" *ngIf="forecastResults.length > 0">
       <div class="forecast-grid">

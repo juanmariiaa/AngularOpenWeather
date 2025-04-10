@@ -41,14 +41,6 @@
     }
   }
 
-  .mat-mdc-chip-grid {
-    margin-bottom: 16px;
-  }
-
-  .mat-mdc-chip-row {
-    background-color: rgba(60, 59, 52, 0.1);
-  }
-
   .submit-button {
     align-self: center;
     background-color: #ff6b6b;
@@ -147,16 +139,6 @@
         color: #3c3b34;
         margin-bottom: 16px;
         text-transform: capitalize;
-      }
-
-      .meta-info {
-        .mat-chip-list {
-          .mat-chip {
-            background-color: rgba(60, 59, 52, 0.1);
-            color: #3c3b34;
-            font-size: 0.875rem;
-          }
-        }
       }
     }
 

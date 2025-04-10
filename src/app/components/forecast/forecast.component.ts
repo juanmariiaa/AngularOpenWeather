@@ -17,6 +17,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+
 @Component({
   selector: 'app-forecast',
   standalone: true,
@@ -59,10 +60,6 @@ export class ForecastComponent extends WeatherBaseComponent {
   }
   cityIdArray: string[] = [];
 
-removeCity(cityId: string) {
-  this.cityIdArray = this.cityIdArray.filter(id => id !== cityId);
-  // Update your form control accordingly
-}
 
   protected override fetchMultipleCities(cityIds: string): void {
     this.weatherService.getForecastByCities(cityIds)

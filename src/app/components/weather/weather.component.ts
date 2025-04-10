@@ -44,17 +44,7 @@ import { MatChipsModule } from '@angular/material/chips';
 })
 export class WeatherComponent extends WeatherBaseComponent {
   weatherResults: WeatherData[] = [];
-  cityIdArray: string[] = []; // Array to store city IDs for chips
   cityInputValue: string = ''; // Input value for city ID autocomplete
-
-  /**
-   * Removes a city ID from the array when the chip's remove button is clicked.
-   * @param cityId The city ID to remove.
-   */
-  removeCity(cityId: string): void {
-    this.cityIdArray = this.cityIdArray.filter(id => id !== cityId);
-    this.updateFormControlValue();
-  }
 
   /**
    * Adds a new city ID to the array when the user presses "Enter" or "Add".
@@ -65,20 +55,13 @@ export class WeatherComponent extends WeatherBaseComponent {
     const input = event.target as HTMLInputElement;
     const value = input?.value.trim();
 
-    if (value && !this.cityIdArray.includes(value)) {
-      this.cityIdArray.push(value);
-      this.updateFormControlValue();
+    if (value) {
+      // Fetch weather for the city when added
+      this.fetchSingleCity(parseInt(value)); // Assuming city ID is a number
     }
 
     // Clear the input field
     input.value = '';
-  }
-
-  /**
-   * Updates the value of the form control to match the city ID array.
-   */
-  private updateFormControlValue(): void {
-    this.form.get('cityIds')?.setValue(this.cityIdArray.join(','));
   }
 
   /**
@@ -142,5 +125,4 @@ export class WeatherComponent extends WeatherBaseComponent {
     
     return 'cloud'; // default icon
   }
-
 }
