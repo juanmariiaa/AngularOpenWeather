@@ -1,0 +1,39 @@
+<footer class="footer-container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Weather API Test</h3>
+        <div class="social-links">
+          <a href="https://www.nucleoo.com" target="_blank" mat-icon-button>
+            <mat-icon>language</mat-icon>
+          </a>
+          <a href="https://www.linkedin.com/company/nucleoo" target="_blank" mat-icon-button>
+            <mat-icon>linkedin</mat-icon>
+          </a>
+          <a href="https://twitter.com/nucleoo" target="_blank" mat-icon-button>
+            <mat-icon>twitter</mat-icon>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-section links">
+        <button mat-button routerLink="/weather">
+          <mat-icon>cloud</mat-icon>
+          Weather
+        </button>
+        <button mat-button routerLink="/forecast">
+          <mat-icon>calendar_today</mat-icon>
+          Forecast
+        </button>
+      </div>
+
+      <div class="footer-section">
+        <div class="copyright">
+          <img 
+            src="https://www.nucleoo.com/wp-content/themes/nucleoo/images/logo-nucleoo-grey.svg" 
+            alt="Nucleoo"
+            class="footer-logo">
+          <p>© {{ currentYear }} Nucleoo. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>

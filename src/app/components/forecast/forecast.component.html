@@ -1,0 +1,101 @@
+<div class="weather-container">
+  <!-- Header Section -->
+  <header class="app-header">
+    <h1>Weather Forecast</h1>
+  </header>
+
+  <!-- Search Section -->
+  <mat-card class="search-card">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <mat-chip-grid #chipGrid>
+        <mat-chip-row *ngFor="let cityId of cityIdArray" 
+                     (removed)="removeCity(cityId)">
+          {{cityId}}
+          <button matChipRemove>
+            <mat-icon>cancel</mat-icon>
+          </button>
+        </mat-chip-row>
+      </mat-chip-grid>
+
+      <mat-form-field class="city-input" appearance="outline">
+        <mat-label>Add City ID</mat-label>
+        <input matInput
+               #cityInput
+               formControlName="cityIds"
+               [matAutocomplete]="auto"
+               placeholder="Type a city ID">
+        <mat-icon matSuffix>location_city</mat-icon>
+        <mat-autocomplete #auto="matAutocomplete">
+        </mat-autocomplete>
+        <mat-hint class="city-hint">
+          Example: 2172797,2643743,5128581
+        </mat-hint>
+      </mat-form-field>
+
+      <button mat-fab extended color="primary" 
+              class="submit-button" 
+              type="submit" 
+              [disabled]="loading">
+        <mat-icon>search</mat-icon>
+        {{ loading ? 'Loading...' : 'Get Forecast' }}
+      </button>
+    </form>
+  </mat-card>
+
+  <!-- Loading Spinner -->
+  <div class="spinner-container" *ngIf="loading">
+    <mat-spinner diameter="50" class="custom-spinner"></mat-spinner>
+  </div>
+
+  <!-- Results Section -->
+  <div class="weather-container">
+    <!-- Header and Search sections remain the same -->
+
+    <!-- Results Section -->
+    <div class="forecast-results" *ngIf="forecastResults.length > 0">
+      <div class="forecast-grid">
+        <div *ngFor="let forecast of forecastResults" class="forecast-table-container">
+          <mat-card>
+            <mat-card-header>
+              <div class="city-header">
+                <h2>{{ forecast.city_name }}</h2>
+                <span class="city-id">ID: {{ forecast.city_id }}</span>
+              </div>
+            </mat-card-header>
+            
+            <mat-card-content>
+              <table mat-table [dataSource]="forecast.forecast" class="forecast-table">
+                <!-- Date Column -->
+                <ng-container matColumnDef="date">
+                  <th mat-header-cell *matHeaderCellDef> Date </th>
+                  <td mat-cell *matCellDef="let day"> {{day.date}} </td>
+                </ng-container>
+
+                <!-- Temperature Column -->
+                <ng-container matColumnDef="temperature">
+                  <th mat-header-cell *matHeaderCellDef> Temperature </th>
+                  <td mat-cell *matCellDef="let day" class="temperature-cell"> 
+                    {{day.temperature}}°C 
+                  </td>
+                </ng-container>
+
+                <!-- Description Column -->
+                <ng-container matColumnDef="description">
+                  <th mat-header-cell *matHeaderCellDef> Description </th>
+                  <td mat-cell *matCellDef="let day"> 
+                    <div class="description-cell">
+                      <mat-icon class="weather-icon">{{getWeatherIcon(day.description)}}</mat-icon>
+                      {{day.description}}
+                    </div>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="['date', 'temperature', 'description']"></tr>
+                <tr mat-row *matRowDef="let row; columns: ['date', 'temperature', 'description'];"></tr>
+              </table>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+</div>
