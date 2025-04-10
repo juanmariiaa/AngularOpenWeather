@@ -1,51 +1,85 @@
-
 .header-toolbar {
-    background-color: #3c3b34;
-    color: white;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
-    padding: 0 16px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+  background-color: #3c3b34;
+  color: white;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-  .left-buttons {
-    display: flex;
-    gap: 12px;
-  }
+.left-buttons {
+  display: flex;
+  gap: 12px;
+}
 
+.app-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.logo-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+/* Estilos base */
+button[mat-stroked-button] {
+  border: 1px solid #ff6b6b;
+  color: white;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+  padding: 6px 12px;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 6px; /* Espacio entre icono y texto */
+}
+
+button[mat-stroked-button] mat-icon {
+  font-size: 20px;
+}
+
+button[mat-stroked-button]:hover {
+  background-color: #ff6b6b;
+  color: white;
+}
+
+/* Responsive para móviles */
+@media (max-width: 600px) {
   .app-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    flex-grow: 1;
-    text-align: center;
+    display: none;
   }
 
-  .logo-container {
-    height: 100%;
-    display: flex;
-    align-items: center;
+  .header-toolbar {
+    padding: 0 8px;
   }
 
   .logo {
-    height: 40px;
-    width: auto;
-    object-fit: contain;
-    filter: brightness(0) invert(1);
+    height: 28px;
+  }
+
+  .left-buttons {
+    gap: 6px;
   }
 
   button[mat-stroked-button] {
-    border: 1px solid #ff6b6b;
-    color: white;
-    background-color: transparent;
-    transition: background-color 0.3s ease;
-
-    mat-icon {
-      margin-right: 4px;
-    }
-
-    &:hover {
-      background-color: #ff6b6b;
-      color: white;
-    }
+    padding: 4px 10px; /* Padding interior reducido pero presente */
+    font-size: 0.75rem;
+    gap: 4px;
   }
+
+  button[mat-stroked-button] mat-icon {
+    font-size: 16px;
+  }
+}

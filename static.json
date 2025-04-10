@@ -1,0 +1,7 @@
+{
+    "root": "dist/weather-app",
+    "clean_urls": true,
+    "routes": {
+      "/**": "index.html"
+    }
+  }

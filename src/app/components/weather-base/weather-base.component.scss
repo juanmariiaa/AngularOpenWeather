@@ -1,100 +1,30 @@
-:host {
-    display: block;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
-  }
-  
-  mat-card {
-    max-width: 1200px;
-    margin: 20px auto;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  mat-card-header {
-    background-color: #3c3b34;
-    color: white;
-    padding: 16px;
-    margin: -16px -16px 16px -16px;
-    border-radius: 8px 8px 0 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .current-info {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    font-size: 0.9em;
-    opacity: 0.8;
-  }
-  
-  mat-card-title {
-    margin: 0;
-    font-size: 24px;
-    font-weight: 500;
-  }
-  
-  mat-form-field {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  
-  .mat-mdc-form-field-hint {
-    color: rgba(60, 59, 52, 0.6);
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    background-color: #f8f8f8;
-    border-radius: 4px;
-    margin-bottom: 20px;
-  }
-  
-  .submit-button {
-    align-self: flex-end;
-    background-color: #ff6b6b;
-    color: white;
-    
-    &:hover {
-      background-color: darken(#ff6b6b, 10%);
-    }
-  
-    &:disabled {
-      background-color: rgba(60, 59, 52, 0.12);
-    }
-  }
-  
-  .spinner-container {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-  }
-  
-  .custom-spinner::ng-deep circle {
-    stroke: #ff6b6b !important;
-  }
-  
-  .results {
-    margin-top: 20px;
-  }
-  
-  // Responsive layout
-  @media (max-width: 960px) {
-    mat-grid-list {
-      ::ng-deep [cols="3"] {
-        cols: 2;
-      }
-    }
-  }
-  
-  @media (max-width: 600px) {
-    mat-grid-list {
-      ::ng-deep [cols="3"] {
-        cols: 1;
-      }
-    }
-  }
+.nucleoo-header-card {
+  background-color: #3c3b34;
+  color: white;
+  font-weight: bold;
+  font-size: 22px;
+  padding: 16px 24px;
+  margin: 0;
+  border-radius: 0;
+}
+
+.main-container {
+  padding: 24px;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+.nucleoo-header-card {
+  background-color: #3c3b34;
+  color: white;
+  font-weight: bold;
+  font-size: 22px;
+  padding: 16px 24px;
+  margin: 0;
+  border-radius: 0;
+}
+
+.main-container {
+  padding: 24px;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}

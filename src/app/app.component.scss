@@ -1,16 +1,31 @@
-
 .nucleoo-header-card {
-    background-color: #3c3b34;
-    color: white;
-    font-weight: bold;
-    font-size: 22px;
-    padding: 16px 24px;
-    margin: 0;
-    border-radius: 0;
-  }
+  background-color: #3c3b34;
+  color: white;
+  font-weight: bold;
+  font-size: clamp(18px, 2.5vw, 22px); // Responsive font size
+  padding: clamp(12px, 2vw, 16px) clamp(16px, 3vw, 24px); // Responsive padding
+  margin: 0;
+  border-radius: 0;
+}
 
-  .main-container {
-    padding: 24px;
-    background-color: #f5f5f5;
-    min-height: 100vh;
+.main-container {
+  padding: clamp(16px, 3vw, 24px); // Responsive padding
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+// Mobile styles
+@media (max-width: 768px) {
+  .nucleoo-header-card {
+    text-align: center;
   }
+}
+
+// Small mobile styles
+@media (max-width: 480px) {
+  .main-container {
+    padding: 12px;
+  }
+}

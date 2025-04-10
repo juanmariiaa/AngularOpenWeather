@@ -131,7 +131,7 @@ export class WeatherComponent extends WeatherBaseComponent {
     } else if (description.includes('clear sky')) {
       return 'wb_sunny';
     } else if (description.includes('few clouds')) {
-      return 'partly_cloudy_day';
+      return 'cloud';
     } else if (description.includes('scattered clouds')) {
       return 'cloud_queue';
     } else if (description.includes('broken clouds')) {
