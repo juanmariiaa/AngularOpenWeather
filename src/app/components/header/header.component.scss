@@ -8,9 +8,41 @@
   justify-content: space-between;
 }
 
-.left-buttons {
+.left-nav {
   display: flex;
   gap: 12px;
+}
+
+nav {
+  display: flex;
+  gap: 16px;
+  margin: 0 auto;
+
+  a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: white !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 6px 12px; /* Agregar algo de padding para que el borde redondeado sea visible */
+
+    &:hover {
+      color: #ff6b6b; // Nucleoo's accent color
+      transform: scale(1.05); // Slight scaling effect
+    }
+
+    mat-icon {
+      margin-right: 4px;
+    }
+  }
+
+  /* Estilo para el enlace activo */
+  a.active {
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo más oscuro cuando está activo */
+    color: #ff6b6b; /* Color para el texto activo */
+    border-radius: 12px; /* Bordes redondeados */
+  }
 }
 
 .app-title {
@@ -32,29 +64,6 @@
   object-fit: contain;
   filter: brightness(0) invert(1);
 }
-
-/* Estilos base */
-button[mat-stroked-button] {
-  border: 1px solid #ff6b6b;
-  color: white;
-  background-color: transparent;
-  transition: background-color 0.3s ease;
-  padding: 6px 12px;
-  font-size: 0.875rem;
-  display: flex;
-  align-items: center;
-  gap: 6px; /* Espacio entre icono y texto */
-}
-
-button[mat-stroked-button] mat-icon {
-  font-size: 20px;
-}
-
-button[mat-stroked-button]:hover {
-  background-color: #ff6b6b;
-  color: white;
-}
-
 /* Responsive para móviles */
 @media (max-width: 600px) {
   .app-title {
@@ -69,17 +78,21 @@ button[mat-stroked-button]:hover {
     height: 28px;
   }
 
-  .left-buttons {
+  .left-nav {
     gap: 6px;
   }
 
-  button[mat-stroked-button] {
-    padding: 4px 10px; /* Padding interior reducido pero presente */
-    font-size: 0.75rem;
+  nav {
+    gap: 8px;
+  }
+
+  a {
+    padding: 6px 12px; /* Mantener el padding igual para la consistencia */
+    font-size: 0.875rem; /* Mantener el tamaño de la letra igual en móviles */
     gap: 4px;
   }
 
-  button[mat-stroked-button] mat-icon {
+  a mat-icon {
     font-size: 16px;
   }
 }

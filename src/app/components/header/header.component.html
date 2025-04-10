@@ -1,21 +1,23 @@
 <mat-toolbar class="header-toolbar">
-    <div class="left-buttons">
-      <button mat-stroked-button color="accent" routerLink="/weather">
+  <div class="left-nav">
+    <nav>
+      <a routerLink="/weather" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
         <mat-icon>cloud</mat-icon>
         Weather
-      </button>
-      <button mat-stroked-button color="accent" routerLink="/forecast">
+      </a>
+      <a routerLink="/forecast" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
         <mat-icon>calendar_today</mat-icon>
         Forecast
-      </button>
-    </div>
+      </a>
+    </nav>
+  </div>
 
-    <span class="app-title">Weather API Test</span>
+  <span class="app-title">Weather API Test</span>
 
-    <div class="logo-container">
-      <img 
-        src="https://www.nucleoo.com/wp-content/themes/nucleoo/images/logo-nucleoo-grey.svg" 
-        alt="Nucleoo"
-        class="logo">
-    </div>
-  </mat-toolbar>
+  <div class="logo-container">
+    <img 
+      src="https://www.nucleoo.com/wp-content/themes/nucleoo/images/logo-nucleoo-grey.svg" 
+      alt="Nucleoo"
+      class="logo">
+  </div>
+</mat-toolbar>

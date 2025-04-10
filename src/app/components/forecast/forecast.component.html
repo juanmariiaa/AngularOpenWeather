@@ -12,16 +12,13 @@
         <input matInput
                #cityInput
                formControlName="cityIds"
-               [matAutocomplete]="auto"
                placeholder="Type a city ID">
         <mat-icon matSuffix>location_city</mat-icon>
-        <mat-autocomplete #auto="matAutocomplete">
-        </mat-autocomplete>
         <mat-hint class="city-hint">
           Example: 2172797,2643743,5128581
         </mat-hint>
       </mat-form-field>
-
+  
       <button mat-fab extended color="primary" 
               class="submit-button" 
               type="submit" 
@@ -31,6 +28,7 @@
       </button>
     </form>
   </mat-card>
+  
 
   <!-- Loading Spinner -->
   <div class="spinner-container" *ngIf="loading">

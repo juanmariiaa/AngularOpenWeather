@@ -44,30 +44,21 @@ import { MatChipsModule } from '@angular/material/chips';
 })
 export class WeatherComponent extends WeatherBaseComponent {
   weatherResults: WeatherData[] = [];
-  cityInputValue: string = ''; // Input value for city ID autocomplete
+  cityInputValue: string = '';
 
-  /**
-   * Adds a new city ID to the array when the user presses "Enter" or "Add".
-   * Updates the form control value for submission.
-   * @param event The input event.
-   */
+
   addCity(event: Event): void {
     const input = event.target as HTMLInputElement;
     const value = input?.value.trim();
 
     if (value) {
-      // Fetch weather for the city when added
-      this.fetchSingleCity(parseInt(value)); // Assuming city ID is a number
+      this.fetchSingleCity(parseInt(value)); 
     }
 
-    // Clear the input field
     input.value = '';
   }
 
-  /**
-   * Fetches weather for a single city based on the given city ID.
-   * @param cityId The ID of the city to fetch weather for.
-   */
+
   protected override fetchSingleCity(cityId: number): void {
     this.weatherService.getWeatherByCity(cityId)
       .pipe(finalize(() => this.loading = false))
@@ -81,10 +72,7 @@ export class WeatherComponent extends WeatherBaseComponent {
       });
   }
 
-  /**
-   * Fetches weather for multiple cities based on the given city IDs.
-   * @param cityIds The comma-separated city IDs to fetch weather for.
-   */
+
   protected override fetchMultipleCities(cityIds: string): void {
     this.weatherService.getWeatherByCities(cityIds)
       .pipe(finalize(() => this.loading = false))
@@ -123,6 +111,6 @@ export class WeatherComponent extends WeatherBaseComponent {
       return 'cloud';
     }
     
-    return 'cloud'; // default icon
+    return 'cloud';
   }
 }
