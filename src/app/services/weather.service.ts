@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class WeatherService {
-  private apiUrl = 'http://localhost:5000/weather';
+  private apiUrl = 'https://flaskopenweatherapi.onrender.com/weather';
 
   constructor(private http: HttpClient) { }
 
@@ -25,15 +25,19 @@ export class WeatherService {
   getForecastByCities(cityIds: string): Observable<any> {
     return this.http.get(`${this.apiUrl}/forecast`, { params: { city_ids: cityIds } });
   }
+
   getWeatherByName(cityName: string): Observable<any> {
     return this.http.get(`${this.apiUrl}/name/${cityName}`);
   }
+
   getForecastByName(cityName: string): Observable<any> {
     return this.http.get(`${this.apiUrl}/forecast/name/${cityName}`);
   }
+
   getWeatherByNames(cityNames: string): Observable<any> {
     return this.http.get(`${this.apiUrl}/names`, { params: { city_names: cityNames } });
   }
+
   getForecastByNames(cityNames: string): Observable<any> {
     return this.http.get(`${this.apiUrl}/forecast/names`, { params: { city_names: cityNames } });
   }
