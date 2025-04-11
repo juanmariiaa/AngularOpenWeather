@@ -16,7 +16,6 @@
   }
 }
 
-// ChatGPT-style Search Card Styling
 .search-card {
   padding: 16px;
   margin-bottom: 32px;
@@ -107,7 +106,6 @@
   }
 }
 
-// Keep all existing styles and update/add the following
 .forecast-results {
   margin-top: 24px;
   padding: 0 16px;
@@ -118,11 +116,11 @@
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   gap: 24px;
   margin: 0 auto;
-  max-width: 1800px; // Adjusts maximum width to prevent too wide layouts
+  max-width: 1800px; 
 }
 
 .forecast-table-container {
-  margin-bottom: 0; // Remove margin as we're using grid gap
+  margin-bottom: 0;
   height: 100%;
   
   mat-card {

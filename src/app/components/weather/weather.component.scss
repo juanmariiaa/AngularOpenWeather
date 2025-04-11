@@ -5,7 +5,6 @@
   background-color: #ffffff;
 }
 
-// Shared Header Styling
 .app-header {
   text-align: center;
   margin-bottom: 32px;
@@ -18,7 +17,6 @@
   }
 }
 
-// ChatGPT-style Search Card Styling
 .search-card {
   padding: 16px;
   margin-bottom: 32px;
@@ -53,7 +51,6 @@
         --mdc-outlined-text-field-outline-color: transparent;
         
         &:hover {
-          // Removed hover effect here
           border-color: #e5e5e6;
         }
         
@@ -71,14 +68,14 @@
 
   .submit-button {
     align-self: center;
-    background-color: #ff6b6b; // Restored to original color
+    background-color: #ff6b6b;
     color: white;
     padding: 0 32px;
     border-radius: 24px;
     transition: background-color 0.2s ease;
     
     &:hover {
-      background-color: darken(#ff6b6b, 10%); // Adjusted to match original color
+      background-color: darken(#ff6b6b, 10%); 
     }
 
     &:disabled {
@@ -87,14 +84,13 @@
   }
 }
 
-// Shared Spinner Styling
 .spinner-container {
   display: flex;
   justify-content: center;
   padding: 48px 0;
 
   .custom-spinner::ng-deep circle {
-    stroke: #ff6b6b !important; // Changed back to match button color
+    stroke: #ff6b6b !important;
   }
 }
 
@@ -289,7 +285,6 @@
   }
 }
 
-// Responsive adjustments
 @media (max-width: 768px) {
   .weather-results {
     .weather-card {
